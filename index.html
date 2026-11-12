@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Pedro Jesús Muñoz Cifuentes — Software Engineer</title>
+  <meta name="description" content="Portfolio de Pedro Jesús Muñoz Cifuentes, ingeniero de software especializado en backend con Java y Spring Boot. Explora la isla: cada rincón cuenta una parte de su trayectoria.">
+  <meta name="theme-color" content="#3f7fae">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="preload" as="image" href="assets/base.webp">
+</head>
+<body>
+  <div id="stage" class="stage" aria-hidden="true">
+    <canvas id="scene"></canvas>
+    <canvas id="life"></canvas>
+  </div>
+
+  <div id="loader" class="loader" role="status" aria-live="polite">
+    <p class="loader__name">Pedro Jesús Muñoz Cifuentes</p>
+    <div class="loader__bar"><span id="loader-fill"></span></div>
+    <p class="loader__hint">Levantando la isla…</p>
+  </div>
+
+  <header class="masthead">
+    <p class="masthead__role">Software Engineer</p>
+    <h1 class="masthead__name">Pedro Jesús<br>Muñoz Cifuentes</h1>
+    <p class="masthead__tag">Backend · Java · Spring Boot</p>
+    <p class="masthead__hint">Explora la isla: cada rincón guarda una parte de mi historia.</p>
+  </header>
+
+  <div class="controls">
+    <button id="toggle-light" class="chip-btn" type="button" aria-pressed="false">
+      <span class="chip-btn__icon" data-icon="light"></span><span class="chip-btn__text">Noche</span>
+    </button>
+    <button id="toggle-motion" class="chip-btn" type="button" aria-pressed="false">
+      <span class="chip-btn__icon" data-icon="motion"></span><span class="chip-btn__text">Pausar</span>
+    </button>
+  </div>
+
+  <div id="pins" class="pins"></div>
+
+  <nav class="index" aria-label="Secciones">
+    <ol id="index-list"></ol>
+  </nav>
+
+  <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panel-title" hidden>
+    <button id="panel-close" class="panel__close" type="button" aria-label="Cerrar sección">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="panel__scroll" id="panel-scroll">
+      <p class="panel__kicker" id="panel-kicker"></p>
+      <h2 class="panel__title" id="panel-title" tabindex="-1"></h2>
+      <p class="panel__lede" id="panel-lede"></p>
+      <div class="panel__body" id="panel-body"></div>
+    </div>
+    <div class="panel__nav">
+      <button id="panel-prev" type="button" class="panel__step"></button>
+      <button id="panel-next" type="button" class="panel__step panel__step--next"></button>
+    </div>
+  </aside>
+
+  <noscript>
+    <div class="fallback">
+      <img src="resources/Pmzz_isometric_low_poly_floating_island_with_windmill_bright__40437587-4a46-4781-9d3e-a67948d53904_2.png" alt="Isla flotante con un molino">
+      <p>Pedro Jesús Muñoz Cifuentes — Software Engineer. Activa JavaScript para explorar la isla.</p>
+    </div>
+  </noscript>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
